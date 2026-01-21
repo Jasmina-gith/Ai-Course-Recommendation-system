@@ -109,4 +109,5 @@ This project is available for educational purposes.
 ## Acknowledgements
 
 - Groq for providing the API for AI-powered recommendations
+
 - Font Awesome for the icons used in the interface
