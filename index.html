@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PathFinder: Personalized Learning Guide</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">PathFinder <span class="dot">•</span></div>
+    <div class="tagline">Your Smart Education Companion</div>
+  </nav>
+  <main class="main-content">
+    <section class="intro-section">
+      <h1>Discover Your Unique Learning Journey</h1>
+      <p>Let AI craft a roadmap tailored to your ambitions, skills, and dreams.</p>
+    </section>
+    <section class="card" id="input-section">
+      <form id="student-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="studentName">Name</label>
+            <input type="text" id="studentName" placeholder="Enter your name" required>
+          </div>
+          <div class="form-field">
+            <label for="studentGoal">Dream Career</label>
+            <input type="text" id="studentGoal" placeholder="e.g. AI Engineer, UX Designer" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="studentSkills">Your Skills</label>
+            <input type="text" id="studentSkills" placeholder="e.g. Java, Photoshop, Excel" required>
+          </div>
+          <div class="form-field">
+            <label for="studentBackground">Background</label>
+            <select id="studentBackground" required>
+              <option value="">Select background</option>
+              <option value="school">School Student</option>
+              <option value="undergrad">Undergraduate</option>
+              <option value="postgrad">Postgraduate</option>
+              <option value="professional">Professional</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="studyHours">Weekly Study Hours</label>
+            <input type="number" id="studyHours" min="1" max="60" placeholder="e.g. 10" required>
+          </div>
+          <div class="form-field">
+            <label for="learningPref">Learning Preference</label>
+            <select id="learningPref" required>
+              <option value="">Choose one</option>
+              <option value="visual">Visual</option>
+              <option value="audio">Audio</option>
+              <option value="hands-on">Hands-on</option>
+              <option value="reading">Reading</option>
+              <option value="mixed">Mixed</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="primary-btn">Show My Path</button>
+      </form>
+    </section>
+    <section class="card hidden" id="loading-section">
+      <div class="spinner"></div>
+      <p>Generating your personalized roadmap...</p>
+    </section>
+    <section class="card hidden" id="result-section">
+      <div class="result-header">
+        <h2>Welcome, <span id="result-name"></span>!</h2>
+        <button id="restart-btn" class="secondary-btn">Start Again</button>
+      </div>
+      <div class="result-body">
+        <div class="result-block">
+          <h3>Your Profile</h3>
+          <ul id="profile-list"></ul>
+        </div>
+        <div class="result-block">
+          <h3>Recommended Courses</h3>
+          <ul id="course-list"></ul>
+        </div>
+        <div class="result-block">
+          <h3>Learning Resources</h3>
+          <ul id="resource-list"></ul>
+        </div>
+        <div class="result-block">
+          <h3>Skill Focus</h3>
+          <ul id="skill-list"></ul>
+        </div>
+        <div class="result-block">
+          <h3>Step-by-Step Path</h3>
+          <ol id="timeline-list"></ol>
+        </div>
+      </div>
+      <div class="feedback-section">
+        <h4>How helpful was this plan?</h4>
+        <div class="feedback-btns">
+          <button class="feedback-btn" data-feedback="good">👍</button>
+          <button class="feedback-btn" data-feedback="bad">👎</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <span>&copy; 2025 PathFinder. All rights reserved.</span>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

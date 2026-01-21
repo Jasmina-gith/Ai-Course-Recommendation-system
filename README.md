@@ -1,31 +1,112 @@
-# Ai-Course-Recommendation-system
-An AI-powered educational platform that generates personalized learning roadmaps using the Groq API. It analyzes user goals and skills to craft structured career paths. Features a modern dark-mode UI, responsive design, and a robust offline fallback system to ensure recommendations are always available, even without a backend.
-# PathFinder: Intelligent Course Recommendation Engine
+# Intelligent Course Recommendation Engine
 
-PathFinder is a personalized educational platform that crafts custom learning roadmaps. By analyzing a student's current skills, career aspirations, and learning preferences, the system generates a structured, step-by-step path to success using AI-powered insights.
+This project is an educational platform that recommends personalized learning paths based on student goals, current skills, and career aspirations. The system uses the Groq API to generate tailored recommendations that adapt to each user's specific needs, with a fallback to local recommendation generation when the backend is unavailable.
 
-## 🚀 Features
+## Features
 
-- **Personalized Roadmaps**: Tailored course suggestions based on your unique profile.
-- **AI Integration**: Powered by the Groq API for high-quality, professional recommendations.
-- **Smart Fallback**: Automatically generates high-quality mock data if the backend is offline.
-- **Progressive UI**: A modern, responsive "Dark Mode" interface built for all devices.
-- **Skill Prioritization**: Identifies which skills are most critical for your specific career goal.
+- Personalized course recommendations based on user profile
+- Learning material suggestions tailored to career goals
+- Skill development priorities with importance ratings
+- Structured learning path with phases and milestones
+- Responsive design that works on desktop and mobile devices
+- Offline functionality with mock data when backend is unavailable
 
-## 🛠️ Tech Stack
+## Screenshots
 
-- **Frontend**: Vanilla JavaScript (ES6+), HTML5, CSS3 (Flexbox & Grid)
-- **Intelligence**: Groq AI API
-- **Backend**: Node.js & Express
-- **Icons & Fonts**: Font Awesome, Google Fonts (Montserrat & Roboto)
+### Homepage
+![Homepage](screenshots/homepage.png)
 
-## 📦 Setup & Installation
+### Working Application
+![Working Application](screenshots/working.png)
+
+## Setup Instructions
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v14 or higher)
-- A modern web browser
+
+- A modern web browser (Chrome, Firefox, Safari, Edge)
+- Node.js and npm installed on your machine
+- Internet connection to access the Groq API
 
 ### Installation
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/YOUR_USERNAME/pathfinder-ai.git](https://github.com/YOUR_USERNAME/pathfinder-ai.git)
+
+1. Clone or download this repository to your local machine
+2. Navigate to the backend directory and install dependencies:
+   ```
+   cd backend
+   npm install
+   ```
+
+### Running the Application
+
+#### With Backend (Optional)
+1. Start the backend server:
+   ```
+   cd backend
+   npm start
+   ```
+2. Open `index.html` in your browser
+3. Fill out the form with your information
+4. Click "Get Recommendations" to generate personalized learning paths
+
+#### Without Backend (Works Offline)
+1. Simply open `index.html` in your browser
+2. Fill out the form with your information
+3. Click "Get Recommendations" to generate personalized learning paths
+4. The application will automatically use mock data if the backend is unavailable
+
+### API Key
+
+The application uses the Groq API for generating recommendations. The API key is already included in the code for demonstration purposes. In a production environment, you would want to secure this key using environment variables or a backend service.
+
+## How It Works
+
+1. The user enters their information including current skills, education level, career goals, and learning preferences
+2. The application attempts to send this information to the Groq API via the backend server
+3. If the backend is available, the Groq API uses a large language model to generate personalized recommendations
+4. If the backend is unavailable, the application generates mock recommendations locally based on the user input
+5. The recommendations are parsed and displayed in a user-friendly format
+6. The user can view their recommended courses, learning materials, skill priorities, and a structured learning path
+
+## Technologies Used
+
+- HTML5 for structure
+- CSS3 for styling and responsive design
+- JavaScript for interactivity and API integration
+- Groq API for AI-powered recommendations
+- Font Awesome for icons
+
+## Example Data
+
+The application is ready to use with any input data. Here's an example you can try:
+
+- **Name**: John Doe
+- **Current Skills**: JavaScript, HTML, CSS
+- **Education Level**: Bachelor's Degree
+- **Target Career**: Full Stack Developer
+- **Weekly Time Commitment**: 15 hours
+- **Preferred Learning Style**: Interactive
+
+## Limitations
+
+- The recommendations generated by the AI model should be reviewed by educational experts for critical learning decisions
+- The Groq API-based recommendations require an internet connection and a running backend server
+- Mock recommendations (used when backend is unavailable) are less personalized than those from the Groq API
+- The Groq API has usage limits that may affect the availability of the service
+
+## Future Improvements
+
+- User accounts to save and track progress
+- Integration with actual course platforms for direct enrollment
+- Feedback mechanism to improve recommendations over time
+- More detailed skill assessments for better personalization
+- Enhanced offline recommendation algorithm
+- Improved UI with more interactive elements
+
+## License
+
+This project is available for educational purposes.
+
+## Acknowledgements
+
+- Groq for providing the API for AI-powered recommendations
+- Font Awesome for the icons used in the interface

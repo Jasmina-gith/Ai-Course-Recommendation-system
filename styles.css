@@ -1,0 +1,302 @@
+
+/* === Modern Cool Theme for PathFinder === */
+:root {
+  --primary: #6c47ff;
+  --primary-dark: #3a1e8c;
+  --accent: #00e6d0;
+  --bg: #181a23;
+  --bg-card: #23263a;
+  --bg-light: #23263a;
+  --text-main: #f5f6fa;
+  --text-muted: #b2b6c8;
+  --border: #2e3147;
+  --shadow: 0 6px 32px 0 rgba(108,71,255,0.10);
+  --radius: 18px;
+  --transition: all 0.25s cubic-bezier(.4,0,.2,1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+  background: linear-gradient(120deg, #181a23 0%, #23263a 100%);
+  color: var(--text-main);
+  min-height: 100vh;
+  letter-spacing: 0.01em;
+}
+
+.navbar {
+  width: 100%;
+  background: var(--bg-card);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--primary);
+  letter-spacing: 0.04em;
+}
+.dot {
+  color: var(--accent);
+  font-size: 2.2rem;
+}
+.tagline {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.main-content {
+  max-width: 700px;
+  margin: 2.5rem auto 0 auto;
+  padding: 0 1.2rem 2rem 1.2rem;
+}
+
+.intro-section {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.intro-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.02em;
+}
+.intro-section p {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.2rem 2rem 2rem 2rem;
+  margin-bottom: 2.2rem;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+form#student-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.form-row {
+  display: flex;
+  gap: 1.5rem;
+}
+.form-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+label {
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+}
+input, select {
+  background: #1a1c27;
+  color: var(--text-main);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  transition: var(--transition);
+}
+input:focus, select:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary-dark);
+}
+
+.primary-btn, .secondary-btn {
+  padding: 0.9rem 2.2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 0.5rem;
+}
+.primary-btn {
+  background: linear-gradient(90deg, var(--primary) 60%, var(--accent) 100%);
+  color: #fff;
+  box-shadow: 0 2px 16px 0 rgba(0,230,208,0.10);
+}
+.primary-btn:hover {
+  background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+.secondary-btn {
+  background: var(--bg-light);
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+}
+.secondary-btn:hover {
+  background: var(--accent);
+  color: var(--bg-card);
+}
+
+.spinner {
+  border: 6px solid #23263a;
+  border-top: 6px solid var(--accent);
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1.2rem auto;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* === Results Section === */
+#result-section {
+  animation: fadeIn 0.7s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.result-header h2 {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 700;
+}
+.result-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.result-block {
+  background: #1a1c27;
+  border-radius: 12px;
+  padding: 1.2rem 1.1rem 1.1rem 1.1rem;
+  min-width: 220px;
+  flex: 1 1 220px;
+  box-shadow: 0 2px 12px 0 rgba(0,230,208,0.04);
+  border: 1px solid var(--border);
+}
+.result-block h3 {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+  font-weight: 700;
+}
+.result-block ul, .result-block ol {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-left: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.result-block li {
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+.feedback-section {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+.feedback-section h4 {
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+}
+.feedback-btns {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.feedback-btn {
+  background: var(--bg-light);
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  font-size: 1.7rem;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.feedback-btn:hover {
+  background: var(--accent);
+  color: var(--bg-card);
+  transform: scale(1.12);
+}
+
+/* === Footer === */
+.footer {
+  width: 100%;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 1.2rem 0 1.1rem 0;
+  font-size: 1rem;
+  border-top: 1px solid var(--border);
+  margin-top: 2.5rem;
+  letter-spacing: 0.01em;
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  .main-content {
+    max-width: 98vw;
+  }
+  .result-body {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+  }
+  .main-content {
+    padding: 0 0.2rem 1.2rem 0.2rem;
+  }
+  .card {
+    padding: 1.2rem 0.7rem 1.1rem 0.7rem;
+  }
+  .intro-section h1 {
+    font-size: 1.5rem;
+  }
+  .result-header h2 {
+    font-size: 1.2rem;
+  }
+}
